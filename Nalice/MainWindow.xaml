@@ -1,0 +1,22 @@
+﻿<Window x:Class="Nalice.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+        xmlns:local="clr-namespace:Nalice"
+        mc:Ignorable="d"
+        Background="#202023"
+        Title="Nalice" Height="599.567" Width="822.11" ResizeMode="NoResize" Icon="nalice.png">
+    <Grid>
+        <ListView x:Name="files_listview" Margin="10,119,89,10" Foreground="#DDFFFFFF" Background="#FF555555"/>
+        <TextBox x:Name="directory_textbox" Height="25" Margin="47,16,80,0" TextWrapping="Wrap" Background="#FF3C3C3C" VerticalAlignment="Top" Foreground="White" CaretBrush="#FF00E8FF" Text="C:\" IsEnabled="False"/>
+        <materialDesign:PackIcon Kind="FolderNetworkOutline" Margin="10,10,0,0" Height="32" Width="32" Foreground="#FF00E8FF" />
+        <Button x:Name="FolderSearch_button" Content="{materialDesign:PackIcon FolderSearchOutline}" ToolTip="Folder" Margin="741,16,10,0" Height="25" Background="#FF00E8FF" Foreground="#DD000000" VerticalAlignment="Top" Click="FolderSearch_button_Click" />
+        <Button x:Name="sortDown_button" Content="{materialDesign:PackIcon ArrowDown}" ToolTip="Down" Margin="0,526,10,0" Height="25" Background="#FF00E8FF" Foreground="#DD000000" VerticalAlignment="Top" Click="sortDown_button_Click" IsEnabled="False" HorizontalAlignment="Right" Width="65" />
+        <Button x:Name="sortUp_button" Content="{materialDesign:PackIcon ArrowUpward}" ToolTip="Up" Margin="0,496,10,0" Height="25" Background="#FF00E8FF" Foreground="#DD000000" VerticalAlignment="Top" Click="sortUp_button_Click" IsEnabled="False" HorizontalAlignment="Right" Width="65" />
+        <Button x:Name="sortSelect_button" Content="{materialDesign:PackIcon AtomVariant}" ToolTip="Move" Margin="0,466,10,0" Height="25" Background="#FF00E8FF" Foreground="#DD000000" VerticalAlignment="Top" Click="sortSelect_button_Click" IsEnabled="False" HorizontalAlignment="Right" Width="65" />
+        <Button x:Name="Toggle_button" Content="START" Margin="10,65,10,0" Height="34" Background="#FF9DA4A4" Foreground="#DD000000" VerticalAlignment="Top" Click="Toggle_button_Click" />
+        <Button x:Name="delete_button" Content="{materialDesign:PackIcon DeleteForeverOutline}" ToolTip="Delete" Margin="0,436,10,0" Height="25" Background="#FF00E8FF" Foreground="#DD000000" VerticalAlignment="Top" IsEnabled="False" Click="delete_button_Click" HorizontalAlignment="Right" Width="65" />
+    </Grid>
+</Window>

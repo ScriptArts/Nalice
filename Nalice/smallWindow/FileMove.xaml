@@ -1,0 +1,19 @@
+﻿<Window x:Class="Nalice.smallWindow.FileMove"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+        xmlns:local="clr-namespace:Nalice.smallWindow"
+        mc:Ignorable="d"
+        Background="#202023"
+        Title="FileMove" Height="174.82" Width="333.813" ResizeMode="NoResize">
+    <Grid>
+        <Button x:Name="submit_button" Content="{materialDesign:PackIcon CheckUnderline}" ToolTip="Icon" Margin="10,99,10,16" Height="Auto" Background="#FF00E8FF" Foreground="#DD000000" Click="submit_button_Click" />
+        <TextBox x:Name="moveToIndex_textbox"
+            materialDesign:HintAssist.Hint="Move to (example: 2)"
+            Style="{StaticResource MaterialDesignFloatingHintTextBox}"
+            VerticalAlignment="Bottom" Margin="10,0,160,65" Foreground="White" CaretBrush="#FF00E8FF" PreviewTextInput="text_input" />
+        <Label Content="Where do you want to move the file?" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" Foreground="#DDFFFFFF"/>
+    </Grid>
+</Window>
