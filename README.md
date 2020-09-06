@@ -14,7 +14,7 @@ VOICEROIDが出力した音声データ(とテキストデータ)を自動的に
 | Name | Format | Detail |
 | :-------: | :---------: | :----------------: |
 | `<num>` | `000` | Consective number |
-| `<detail>` | `String` | Voive texted data |
+| `<detail>` | `String` | Voice texted data |
 | `<extension>` | `.wav`or`.txt` | Extension of the data |
 
 例: `014_おはようございます.wav`
