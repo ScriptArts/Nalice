@@ -95,7 +95,7 @@ namespace Nalice
                     string _fileName = e.FullPath.Replace(NKernel.observeDirectory + @"\", "");
                     if (_fileName == "nalice.txt")
                     {
-                        string newFileName = (NKernel.fileName.Count + 1).ToString("000") + "_" + ReadTextFile(e.FullPath);
+                        string newFileName = (NKernel.fileName.Count + 1).ToString("000") + "_" + ReadTextFile(e.FullPath).Replace(Environment.NewLine, "+");
                         string newWavFileDirectory = NKernel.observeDirectory + @"\" + newFileName + ".wav";
                         string newTxtFileDirectory = NKernel.observeDirectory + @"\" + newFileName + ".txt";
                         bool j = true;
