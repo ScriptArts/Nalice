@@ -95,10 +95,19 @@ namespace Nalice
                     string _fileName = e.FullPath.Replace(NKernel.observeDirectory + @"\", "");
                     if (_fileName == "nalice.txt")
                     {
-                        string newFileName = (NKernel.fileName.Count + 1).ToString("000") + "_" + ReadTextFile(e.FullPath).Replace(Environment.NewLine, "+");
+                        string textDetail = ReadTextFile(e.FullPath);
+                        string[] noChar = { @"\", "/", ":", "*", "?", "\"", "<", ">", "|", Environment.NewLine };
+                        foreach (var i in noChar)
+                        {
+                            textDetail = textDetail.Replace(i, "+");
+                            Console.WriteLine("Replace : " + i + textDetail);
+                        }
+                        Console.WriteLine("TEXT : " + textDetail);
+                        string newFileName = (NKernel.fileName.Count + 1).ToString("000") + "_" + textDetail;
                         string newWavFileDirectory = NKernel.observeDirectory + @"\" + newFileName + ".wav";
                         string newTxtFileDirectory = NKernel.observeDirectory + @"\" + newFileName + ".txt";
                         bool j = true;
+                        int k = 0;
                         while (j)
                         {
                             try
@@ -110,6 +119,20 @@ namespace Nalice
                             catch
                             {
 
+                            }
+
+                            k++;
+
+                            if (k > 10000)
+                            {
+                                AleartWindow aleartWindow = new AleartWindow
+                                {
+                                    windowName = "Error",
+                                    aleartDetail = "Critical error about file renaming."
+                                };
+
+                                aleartWindow.ShowDialog();
+                                this.Close(); //重大なエラー
                             }
                         }
                         NKernel.fileName.Add(newFileName);
